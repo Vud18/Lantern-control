@@ -20,8 +20,7 @@ async def websocket_handler(request):
 
         for command in flashlight_control_commands:
             await asyncio.sleep(4)
-            for j in command:
-                byte_number = j
+            for byte_number in command:
                 print(f"sending: {byte_number}")
                 await ws.send_bytes(byte_number)
                 print(f"sent: {byte_number}")
