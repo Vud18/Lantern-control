@@ -54,10 +54,3 @@ websocket connection closed
 (venv) $ fg
 [Ctrl+C]
 (venv) $ deactivate
-    ```
-    Фонарь включен!
-    RGB:(255, 255, 244)
-    RGB:(0, 120, 57)
-    Фонарь выключен!
-    websocket connection closed
-    ```
