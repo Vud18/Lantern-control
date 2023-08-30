@@ -32,10 +32,28 @@
 
 ## Порядок запуска
 
-1. Перейдите в корень проекта и введите: pip install -r requirements.txt
-2. Требуется запустить сервер, для этого перейдите в файл server.py и запустите его.
-3. Так же необходимо запустить файл client.py. Делаем это так же как с запуском сервера.
-4. Если все сделано успешно, в консоли client.py вы увидите:
+```shell
+$ pwd
+.../Lantern-control
+$ python --version
+Python 3.11.4
+$ python -m venv venv
+...
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt
+...
+(venv) $ python server.py &
+(venv) $ python client.py
+Фонарь включен!
+RGB:(255, 255, 244)
+RGB:(0, 120, 57)
+Фонарь выключен!
+websocket connection closed
+(venv) $ jobs
+[1]  + suspended (tty output)  python server.py
+(venv) $ fg
+[Ctrl+C]
+(venv) $ deactivate
     ```
     Фонарь включен!
     RGB:(255, 255, 244)
