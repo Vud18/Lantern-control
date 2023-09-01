@@ -32,6 +32,12 @@ def connection_method_argparse():
     parser.add_argument('indir', type=str, help='You need to enter a host and port. Input example: 127.0.0.1 9999')
     parser.add_argument('outdir', type=int)
     args = parser.parse_args()
+
+    if args.indir == '127.0.0.1' and args.outdir == 9999:
+        print('Host: 127.0.0.1. Port: 9999')
+    else:
+        print("Something is entered incorrectly!")
+
     return args
 
 
