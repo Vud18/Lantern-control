@@ -8,7 +8,7 @@
 
 Протокол Управления Фонарем (ПУФ) устроен следующим образом. 
 Для изменения состояния фонаря сервер передает ему команду управления. 
-Все команды кодируются в виде TLV (http://en.wikipedia.org/wiki/Type-length-value), 
+Все команды кодируются в виде [TLV](https://www.google.com), 
 при этом поле type имеет размер 1 байт, поле length — 2 байта и поле value —  length байт. 
 Все данные передаются по сети в Big Endian. 
 ПУФ версии 1 описывает три команды:
@@ -43,7 +43,7 @@ $ source venv/bin/activate
 (venv) $ pip install -r requirements.txt
 ...
 (venv) $ python server.py &
-(venv) $ python client.py
+(venv) $ python client.py 127.0.0.1 9999
 Фонарь включен!
 RGB:(255, 255, 244)
 RGB:(0, 120, 57)
