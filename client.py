@@ -41,6 +41,7 @@ def connection_method_argparse():
     return args
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
-loop.close()
+if __name__ == '__main__':
+  loop = asyncio.get_event_loop()
+  loop.run_until_complete(main())
+  loop.close()
