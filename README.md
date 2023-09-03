@@ -43,7 +43,7 @@ $ source venv/bin/activate
 (venv) $ pip install -r requirements.txt
 ...
 (venv) $ python server.py &
-(venv) $ python client.py 127.0.0.1 9999
+(venv) $ python lantern.py 127.0.0.1 9999
 Фонарь включен!
 RGB:(255, 255, 244)
 RGB:(0, 120, 57)
