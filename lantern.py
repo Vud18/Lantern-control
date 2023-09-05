@@ -33,7 +33,7 @@ def parse_tlv(data):
             return {'type': type_tlv, 'length': length}
 
 
-def lamp_control_knob(s):
+def process_raw_bytes(s):
     res = parse_tlv(s)
     if res['type'] == 0x12 and res['length'] == 0:
         return f'Фонарь включен!'
