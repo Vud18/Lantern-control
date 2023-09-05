@@ -5,25 +5,6 @@ import aiohttp
 import argparse
 
 
-async def main():
-    session = aiohttp.ClientSession()
-    args = connection_method_argparse()
-    async with session.ws_connect(f'http://{args.host}:{args.port}/') as ws:
-
-        async for message in ws:
-            if message.type == aiohttp.WSMsgType.BINARY:
-                result = lamp_control_knob(message.data)
-                print(result)
-
-            elif message.type == aiohttp.WSMsgType.CLOSED:
-                break
-            elif message.type == aiohttp.WSMsgType.ERROR:
-                break
-
-    print('websocket connection closed')
-    await session.close()
-
-
 def connection_method_argparse():
     parser = argparse.ArgumentParser(description='Управляемый по сети фонарь. Фонарь подключается к серверу и '
                                                  'отрабатывает команду управления фонарём')
@@ -60,6 +41,25 @@ def lamp_control_knob(s):
         return f'Фонарь выключен!'
     if res['type'] == 0x20:
         return f"RGB:{res['value']}"
+
+
+async def main():
+    session = aiohttp.ClientSession()
+    args = connection_method_argparse()
+    async with session.ws_connect(f'http://{args.host}:{args.port}/') as ws:
+
+        async for message in ws:
+            if message.type == aiohttp.WSMsgType.BINARY:
+                result = lamp_control_knob(message.data)
+                print(result)
+
+            elif message.type == aiohttp.WSMsgType.CLOSED:
+                break
+            elif message.type == aiohttp.WSMsgType.ERROR:
+                break
+
+    print('websocket connection closed')
+    await session.close()
 
 
 if __name__ == '__main__':
