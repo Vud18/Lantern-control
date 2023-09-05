@@ -4,7 +4,6 @@ import asyncio
 
 
 async def websocket_handler(request):
-    print('Websocket connection starting')
     ws = web.WebSocketResponse()
     await ws.prepare(request)
 
@@ -15,7 +14,6 @@ async def websocket_handler(request):
         await asyncio.sleep(2)
         for byte_number in command:
             await ws.send_bytes(byte_number)
-            print(f"sent: {byte_number}")
 
     await ws.close()
     print('websocket connection closed')
