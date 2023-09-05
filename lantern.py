@@ -50,7 +50,7 @@ async def main():
 
         async for message in ws:
             if message.type == aiohttp.WSMsgType.BINARY:
-                result = lamp_control_knob(message.data)
+                result = process_raw_bytes(message.data)
                 print(result)
 
             elif message.type == aiohttp.WSMsgType.CLOSED:
