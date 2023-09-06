@@ -59,7 +59,6 @@ async def main():
                 break
             elif message.type == aiohttp.WSMsgType.ERROR:
                 break
-
     print('websocket connection closed')
     await session.close()
 
