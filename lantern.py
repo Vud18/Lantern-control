@@ -57,7 +57,6 @@ async def main():
             if message.type == aiohttp.WSMsgType.BINARY:
                 result = process_raw_bytes(message.data)
                 print(result)
-
             elif message.type == aiohttp.WSMsgType.CLOSED:
                 break
             elif message.type == aiohttp.WSMsgType.ERROR:
