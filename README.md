@@ -52,5 +52,5 @@ websocket connection closed
 (venv) $ jobs
 [1]  + suspended (tty output)  python server.py
 (venv) $ fg
-[Ctrl+C]
+[Ctrl+D]
 (venv) $ deactivate
