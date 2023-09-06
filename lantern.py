@@ -25,7 +25,6 @@ def parse_tlv(data):
     while index < len(data):
         type_tlv = data[index]
         index += 1
-
         length = int.from_bytes(data[index:index + 2], byteorder='big')
         index += 2
 
