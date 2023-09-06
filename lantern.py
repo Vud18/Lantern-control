@@ -5,10 +5,15 @@ import aiohttp
 import argparse
 
 
+_LANTERN_DESCRIPTION = (
+    'Управляемый по сети фонарь. '
+    'Скрипт подключается к серверу и '
+    'обрабатывает получаемые команды управления.'
+)
+
 def connection_method_argparse():
-    parser = argparse.ArgumentParser(description='Управляемый по сети фонарь. Фонарь подключается к серверу и '
-                                                 'отрабатывает команду управления фонарём')
-    parser.add_argument('host', type=str, help='Вам необходимо ввести хост и порт. Пример ввода: 127.0.0.1 9999')
+    parser = argparse.ArgumentParser(description=_LANTERN_DESCRIPTION)
+    parser.add_argument('host', type=str)
     parser.add_argument('port', type=int)
     args = parser.parse_args()
 
