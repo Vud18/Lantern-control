@@ -7,8 +7,12 @@ async def websocket_handler(request):
     ws = web.WebSocketResponse()
     await ws.prepare(request)
 
-    flashlight_control_commands = [{b'\x12\x00\x00'}, {b' \x00\x03\xff\xff\xf4'},
-                                    {b' \x00\x03\0x91\0x79\0xe7'}, {b'\x13\x00\x00'}]
+    flashlight_control_commands = [
+        {b'\x12\x00\x00'},
+        {b' \x00\x03\xff\xff\xf4'},
+        {b' \x00\x03\0x91\0x79\0xe7'},
+        {b'\x13\x00\x00'}ь
+    ]
 
     for command in flashlight_control_commands:
         await asyncio.sleep(2)
