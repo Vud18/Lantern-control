@@ -51,7 +51,6 @@ async def main():
     session = aiohttp.ClientSession()
     args = connection_method_argparse()
     async with session.ws_connect(f'http://{args.host}:{args.port}/') as ws:
-
         async for message in ws:
             if message.type == aiohttp.WSMsgType.BINARY:
                 result = process_raw_bytes(message.data)
