@@ -11,7 +11,7 @@ async def websocket_handler(request):
         {b'\x12\x00\x00'},
         {b' \x00\x03\xff\xff\xf4'},
         {b' \x00\x03\0x91\0x79\0xe7'},
-        {b'\x13\x00\x00'}ь
+        {b'\x13\x00\x00'}
     ]
 
     for command in flashlight_control_commands:
